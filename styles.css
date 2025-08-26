@@ -1,0 +1,125 @@
+* {
+    margin: 0; /*margem*/
+    padding: 0; /*margem do lado de dentro*/
+    box-sizing: border-box;
+} /*SERA APLICADO EM TODA PAGINA*/
+
+:root {
+    --primary-color: #FF4111;
+    --secondary-color: #2C3E50;
+    --accent-color: #3498DB;
+    --text-color: #2C3E50;
+    --light-gray: #F8F9FA;
+    --border-color: #E9ECEF;
+    --white-color: #FFFFFF;
+    --hover-btn: rgba(255, 255, 255, 0.1);
+} /*cores que serão usadas*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    line-height: 1.6; /*Altura da linha*/
+}
+
+header {
+    background-color: var(--white-color);
+    padding: 16px 32px; /*1° cima e embaixo, 2° esquerda e direita*/
+    display: flex;
+    align-items: center; /*Alinhamento na vertical*/
+    justify-content: space-around; /*Espaçamento entre os itens*/
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px; /*espaçamento entre a logo e o texto*/
+}
+
+h1 {
+    font-size: 32px; /*tamanho do texto*/
+    color: var(--primary-color);
+    font-weight: bold; /*negrito*/
+}
+
+.fa-bolt {
+    color: var(--primary-color);
+    font-size: 32px;
+} /*Icon da logo*/
+
+.container-busca {
+    width: 100%; /*largura do container*/
+    max-width: 500px; /*largura máxima do container*/
+    margin: 0 32px; /*centraliza o container*/
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--light-gray);
+    border-radius: 24px; /*arredondar a borda*/
+}
+
+.container-busca input {
+    width: 100%;
+    border: none; /*tira a borda*/
+    outline: none; /*tira a linha azul que aparece quando mouse passa*/
+    background-color: var(--light-gray);
+    padding: 8px;
+    font-size: 16px;
+}
+
+.fa-magnifying-glass {
+    color: var(--primary-color);
+}
+
+.container-categorias {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+}
+
+.container-categorias nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 8px 32px;
+}
+
+.botao-categorias {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: none;
+    border-radius: 24px;
+    color: var(--white-color);
+    background: none;
+    padding: 12px 24px;
+    cursor: pointer; /*maozinha aparece quando passa o mouse*/
+}
+
+.botao-categorias:hover {
+    background-color: var(--hover-btn);
+
+}/*hover - quando passa o mouse*/
+
+.botao-categorias.ativo {
+    background-color: var(--primary-color);
+}
+
+.secao-hero {
+    /* background-color: var(--primary-color); */
+    color: var(--white-color);
+    text-align: center; /*alinhar texto*/
+    padding: 48px 32px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 32px;
+}
