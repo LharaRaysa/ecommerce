@@ -83,12 +83,18 @@ let produtos = [
 ];
 
 let conteinerProdutos = document.querySelector(".produtos-container");
+let inputPesquisa = document.querySelector(".input-pesquisa");
+let textoInput = ""
+
+console.log(inputPesquisa)
 
 function mostrarProdutos() {
     let htmlProdutos = ""
 
-    //prd: produtos
     produtos.forEach(prd => {
+
+        if(prd.nome.toLocaleLowerCase().includes(textoInput.toLocaleLowerCase())){
+
         htmlProdutos = htmlProdutos +`
             <div class="cartao-produto">
                 <img src="${prd.imagem}" class="imagem-produto">
@@ -99,11 +105,18 @@ function mostrarProdutos() {
                     <button class="botao-produto">Ver Detalhes</button>
                 </div>
             </div>
-        `
+        `}
     })
 
     conteinerProdutos.innerHTML = htmlProdutos
-    //innerHTML = colocar no html
 }
 
 mostrarProdutos()
+
+function pesquisar(){
+    textoInput = inputPesquisa.value
+
+    mostrarProdutos()
+}
+
+inputPesquisa.addEventListener("input", pesquisar)
