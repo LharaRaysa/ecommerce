@@ -85,6 +85,8 @@ let produtos = [
 let conteinerProdutos = document.querySelector(".produtos-container");
 let inputPesquisa = document.querySelector(".input-pesquisa");
 let textoInput = ""
+let todosBotoes = document.querySelectorAll(".botao-categorias");
+let categoria = "todos"
 
 console.log(inputPesquisa)
 
@@ -93,9 +95,11 @@ function mostrarProdutos() {
 
     produtos.forEach(prd => {
 
-        if(prd.nome.toLocaleLowerCase().includes(textoInput.toLocaleLowerCase())){
+        if (prd.nome.toLocaleLowerCase().includes(textoInput.toLocaleLowerCase())) {
 
-        htmlProdutos = htmlProdutos +`
+            if (prd.categoria === categoria || categoria === "todos") {
+
+            htmlProdutos = htmlProdutos + `
             <div class="cartao-produto">
                 <img src="${prd.imagem}" class="imagem-produto">
                 <div class="info-produto">
@@ -106,6 +110,7 @@ function mostrarProdutos() {
                 </div>
             </div>
         `}
+        }
     })
 
     conteinerProdutos.innerHTML = htmlProdutos
@@ -113,10 +118,23 @@ function mostrarProdutos() {
 
 mostrarProdutos()
 
-function pesquisar(){
+function pesquisar() {
     textoInput = inputPesquisa.value
 
     mostrarProdutos()
 }
 
 inputPesquisa.addEventListener("input", pesquisar)
+
+todosBotoes.forEach(botao => {
+
+    botao.addEventListener("click", function () {
+        categoria = botao.getAttribute("data-categoria")
+
+        todosBotoes.forEach(b => b.classList.remove("ativo"))
+
+        botao.classList.add("ativo")
+
+        mostrarProdutos()
+    })
+})
