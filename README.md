@@ -2,8 +2,6 @@
   <img src="docs/banner.jpg" alt="TechStore Banner" width="700">
 </p>
 
-<h1 align="center">TechStore</h1>
-
 <p align="center">
   <strong>Uma vitrine moderna de e-commerce para produtos de tecnologia</strong><br>
   Projeto frontend desenvolvido com HTML5, CSS3 e JavaScript puro (Vanilla JS).
